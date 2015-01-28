@@ -1,0 +1,10 @@
+[Unit]
+Description=powersave
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/powersave
+
+[Install]
+WantedBy=multi-user.target
