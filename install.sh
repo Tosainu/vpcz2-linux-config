@@ -10,6 +10,7 @@ systemctl enable acpid
 cp xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d/
 
 cp powersave/powersave /usr/local/bin/
-cp powersave/powersave.service /etc/systemd/system/
+cp systemd/system/powersave.service /usr/lib/systemd/system/
 
+systemctl daemon-reload
 systemctl enable powersave.service
