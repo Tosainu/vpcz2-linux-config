@@ -1,9 +1,8 @@
-#!/bin/zsh
+#!/bin/sh
 
-touchpad=`cat /sys/devices/platform/sony-laptop/touchpad`
-if [ "$touchpad" -eq 0 ]
-then
-  echo 1 | tee /sys/devices/platform/sony-laptop/touchpad
+touchpad=/sys/devices/platform/sony-laptop/touchpad
+if [ $(cat $touchpad) -eq 0 ]; then
+  echo 1 > $touchpad
 else
-  echo 0 | tee /sys/devices/platform/sony-laptop/touchpad
+  echo 0 > $touchpad
 fi
