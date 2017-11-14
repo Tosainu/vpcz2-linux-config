@@ -1,0 +1,10 @@
+[Unit]
+Description=Set battery care limits
+
+[Service]
+ExecStart=/usr/bin/sh -c "echo -n %i > /sys/devices/platform/sony-laptop/battery_care_limiter"
+RemainAfterExit=yes
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
