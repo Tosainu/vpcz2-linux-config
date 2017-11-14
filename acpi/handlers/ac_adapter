@@ -1,0 +1,5 @@
+#!/bin/sh
+case "$4" in
+    00000000) echo -n "silent"   > /sys/devices/platform/sony-laptop/thermal_control ;;
+    00000001) echo -n "balanced" > /sys/devices/platform/sony-laptop/thermal_control ;;
+esac
